@@ -20,6 +20,7 @@ jobs:
         ref: "" # The branch that you want to checkout. 
     - run: |
            pwd
+           ls
     # # Calculates traffic and clones and stores in CSV file
     # - name: GitHub traffic 
     #   uses: anshsingal/repository-traffic-action@v.0.1.6
