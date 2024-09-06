@@ -25,7 +25,7 @@ jobs:
     - run: |
            pwd
            ls
-           python3 data_acquisition_script.py ${{ GITHUB_TOKEN }}
+           python3 data_acquisition_script.py ${{ secrets.GITHUB_TOKEN }}
     # # Calculates traffic and clones and stores in CSV file
     # - name: GitHub traffic 
     #   uses: anshsingal/repository-traffic-action@v.0.1.6
