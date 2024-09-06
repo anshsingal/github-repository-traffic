@@ -17,7 +17,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
       with:
-        ref: "traffic"
+        ref: "" # The branch that you want to checkout. 
     - run: |
            pwd
     # # Calculates traffic and clones and stores in CSV file
