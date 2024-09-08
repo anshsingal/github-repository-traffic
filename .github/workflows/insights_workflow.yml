@@ -18,7 +18,7 @@ jobs:
             - uses: actions/checkout@v2
               with: 
                   ref: "" # The branch that you want to checkout.
-                  token: ${{ secrets.Traffic_action_token }}
+                  token: ${{ secrets.TRAFFIC_ACTION_TOKEN }}
                 
             - name: Set up Python 3.10
               uses: actions/setup-python@v2
@@ -27,7 +27,7 @@ jobs:
                 
             - name: acquire and process
               env: 
-                  PERSONAL_ACCESS_TOKEN: ${{ secrets.Traffic_action_token }}
+                  PERSONAL_ACCESS_TOKEN: ${{ secrets.TRAFFIC_ACTION_TOKEN }}
               run: |
                   pip3 install requests
                   python3 data_acquisition_script.py ${{ secrets.TRAFFIC_ACTION_TOKEN }}
