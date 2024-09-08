@@ -16,17 +16,17 @@ referral_paths = requests.get(url = repo_url+"/traffic/popular/paths", headers =
 referrer_sources = requests.get(url = repo_url+"/traffic/popular/referrers", headers = headers).json()
 views = requests.get(url = repo_url+"/traffic/views", headers = headers).json()
 
-if not os.path.isfile("insights.txt"):
-    insights_file = open("insights.txt", "a+")
+if not os.path.isfile("insights.csv"):
+    insights_file = open("insights.csv", "a+")
     insights_file.write("Date,Number of Clones,Unique cloners,Number of views,Unique viewers\n")
 else:
-    insights_file = open("insights.txt", "a")
+    insights_file = open("insights.csv", "a")
 
-if not os.path.isfile("meta_data.txt"):
-    meta_data_file = open("meta_data.txt", "a+")
+if not os.path.isfile("meta_data.csv"):
+    meta_data_file = open("meta_data.csv", "a+")
     meta_data_file.write("Date,Meta Data\n")
 else:
-    meta_data_file = open("meta_data.txt", "a")
+    meta_data_file = open("meta_data.csv", "a")
 
 insights_file.write(f"{datetime.today().strftime('%m-%d-%y')},{clones['count']},{clones['uniques']},{views['count']},{views['uniques']}\n")
 meta_data_file.write(f"{datetime.today().strftime('%m-%d-%y')},{[clones,views,referral_paths,referrer_sources]}\n")
