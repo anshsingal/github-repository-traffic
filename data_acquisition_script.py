@@ -12,6 +12,9 @@ headers = {"Accept": "application/vnd.github+json", "Authorization": f"Bearer {P
 repo_url = "https://api.github.com/repos/anshsingal/sequence-analytics"
 
 clones = requests.get(url = repo_url+"/traffic/clones", headers = headers).json()
+referral_paths = requests.get(url = repo_url+"/traffic/popular/paths", headers = headers).json()
+referrer_sources = requests.get(url = repo_url+"/traffic/popular/referrers", headers = headers).json()
+views = requests.get(url = repo_url+"/traffic/views", headers = headers).json()
 
 if not os.path.isfile("insights.txt"):
     insights_file = open("insights.txt", "a+")
@@ -25,8 +28,8 @@ if not os.path.isfile("meta_data.txt"):
 else:
     meta_data_file = open("meta_data.txt", "a")
 
-insights_file.write(f"{datetime.today().strftime('%m-%d-%y')},{clones['count']},{clones['uniques']},c,d\n")
-meta_data_file.write(f"{datetime.today().strftime('%m-%d-%y')},{[clones]}\n")
+insights_file.write(f"{datetime.today().strftime('%m-%d-%y')},{clones['count']},{clones['uniques']},{views['count']},{views['uniques']}\n")
+meta_data_file.write(f"{datetime.today().strftime('%m-%d-%y')},{[clones,views,referral_paths,referrer_sources]}\n")
 
 
 # print("direct access:")
