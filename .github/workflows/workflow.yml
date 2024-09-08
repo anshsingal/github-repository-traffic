@@ -35,7 +35,7 @@ jobs:
             
             - name: Commit report
               run: |
-                  # git config --global user.name 'Ansh Singal'
+                  git config --global user.name 'Ansh Singal'
                   git config --global user.email 'anshsingal1999@gmail.com'
                   git add .
                   git commit -am "Insights record"
