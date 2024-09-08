@@ -29,7 +29,7 @@ else:
     meta_data_file = open("meta_data.csv", "a")
 
 insights_file.write(f"{datetime.today().strftime('%m-%d-%y')},{clones['count']},{clones['uniques']},{views['count']},{views['uniques']}\n")
-meta_data_file.write(f"{datetime.today().strftime('%m-%d-%y')},{[clones,views,referral_paths,referrer_sources]}\n")
+meta_data_file.write(f"{datetime.today().strftime('%m-%d-%y')},'{[clones,views,referral_paths,referrer_sources]}'\n")
 
 
 # print("direct access:")
