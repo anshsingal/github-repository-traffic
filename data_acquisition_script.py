@@ -9,7 +9,7 @@ from datetime import datetime
 PAT = os.environ['PERSONAL_ACCESS_TOKEN']
 
 headers = {"Accept": "application/vnd.github+json", "Authorization": f"Bearer {PAT}", "X-GitHub-Api-Version": "2022-11-28"}
-repo_url = "https://api.github.com/repos/anshsingal/sequence-analytics"
+repo_url = "https://api.github.com/repos/anshsingal/SeQUeNCe-research"
 
 clones = requests.get(url = repo_url+"/traffic/clones", headers = headers).json()
 referral_paths = requests.get(url = repo_url+"/traffic/popular/paths", headers = headers).json()
