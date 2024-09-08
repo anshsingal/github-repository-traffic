@@ -1,1 +1,1 @@
-Record GitHub repository traffic analytics
+## Record GitHub repository traffic analytics
