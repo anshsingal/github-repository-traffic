@@ -30,7 +30,7 @@ jobs:
                   PERSONAL_ACCESS_TOKEN: ${{ secrets.Traffic_action_token }}
               run: |
                   pip3 install requests
-                  python3 data_acquisition_script.py ${{ secrets.Traffic_action_token }}
+                  python3 data_acquisition_script.py ${{ secrets.TRAFFIC_ACTION_TOKEN }}
             
             - name: Commit report
               run: |
